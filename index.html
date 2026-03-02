@@ -1623,7 +1623,7 @@ updateCatLabel();
  <script>
 // Ocultar botón admin
 document.addEventListener('DOMContentLoaded', function() {
-  var adminBtn = document.querySelector('.admin-btn');
+  var adminBtn = document.querySelector('.admin-fab');
   if (adminBtn) adminBtn.style.display = 'none';
 });
 
@@ -1632,7 +1632,7 @@ var keys = {};
 document.addEventListener('keydown', function(e) {
   keys[e.key] = true;
   if (keys['CapsLock'] && keys['Shift'] && keys['Control'] && e.key === 'Enter') {
-    var adminBtn = document.querySelector('.admin-btn');
+    var adminBtn = document.querySelector('.admin-fab');
     if (adminBtn) {
       adminBtn.style.display = adminBtn.style.display === 'none' ? 'block' : 'none';
     }

@@ -1620,5 +1620,25 @@ function renderAdminCategories() {
 updateCatLabel();
 
 </script>
+ <script>
+// Ocultar botón admin
+document.addEventListener('DOMContentLoaded', function() {
+  var adminBtn = document.getElementById('settingsToggle');
+  if (adminBtn) adminBtn.style.display = 'none';
+});
+
+// Combinación secreta: CapsLock + Shift + Ctrl + Enter
+var keys = {};
+document.addEventListener('keydown', function(e) {
+  keys[e.key] = true;
+  if (keys['CapsLock'] && keys['Shift'] && keys['Control'] && e.key === 'Enter') {
+    var adminBtn = document.getElementById('settingsToggle');
+    if (adminBtn) {
+      adminBtn.style.display = adminBtn.style.display === 'none' ? 'block' : 'none';
+    }
+  }
+});
+document.addEventListener('keyup', function(e) { keys[e.key] = false; });
+</script>
 </body>
 </html>
